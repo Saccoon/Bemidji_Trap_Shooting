@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {bool, string} from 'prop-types'
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 class ButtonLink extends Component {
   

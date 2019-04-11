@@ -4,10 +4,10 @@ body {
   float: left;
   font-family: "Arimo", sans-serif;
   width: 100%;
-  background-color: #241f20;
+  background-color: white;
 }
 
 @font-face {
 	font-family: Valentine;
-	src: url("constants/Valentine_Love.ttf");
+	src: url("resources/fonts/Valentine_Love.ttf");
 }

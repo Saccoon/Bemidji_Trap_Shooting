@@ -6,17 +6,19 @@ import {
 
 //components
 import Footer from '../components/footer/Footer'
+import Navigation from '../components/navigation/Navigation'
 
 //pages
 import HomePage from '../pages/home/Home'
 
-import * as routes from '../constants/routes'
+import * as Routes from '../constants/Routes'
 
 const App = () =>
   <Router>
     <Fragment>
+      <Navigation />
       {/* Home */}
-      <Route exact path={routes.INDEX} component={() => <HomePage/>} />
+      <Route exact path={Routes.INDEX} component={() => <HomePage/>} />
 
       <Footer />
     </Fragment>

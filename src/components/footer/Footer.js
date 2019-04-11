@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 
 import Container from '../container/Container'
 import SocialIcon from '../social/SocialIcon'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { faSortUp } from '@fortawesome/fontawesome-free-solid'
+import { Link } from 'react-router-dom'
+import Brochure from '../../resources/pdf/2019_bemidji_trap_brochure.pdf'
+import Newsletter from '../../resources/pdf/2019_bemidji_trap_newsletter.pdf'
+import * as Routes from '../../constants/Routes'
+
+import { FooterContainer, Top, Flex, SocialList, Links, Text } from './Styles'
 
 class Footer extends Component {
 
@@ -32,74 +37,10 @@ class Footer extends Component {
 
   render() {
 
-    const Footer = styled.div`
-      background-color: #241f20;
-      padding: 10px 0;
-      position: relative;
-    `
-
-    const Flex = styled.div`
-		display: grid;
-		justify-content: space-evenly;
-		align-items: center;
-	  	@media only screen and (min-width: 1024px) {
-			display: flex;
-		}
-    `
-
-    const SocialList = styled.ul`
-      display: flex;
-      list-style: none;
-      li {
-        padding: 0 5px;
-      }
-    `
-
-    const Links = styled.ul`
-      display: flex;
-      list-style: none;
-      li {
-		padding: 0 7px;
-		font-size: 10pt;
-		text-decoration: none;
-		color: #F7F6F6;
-		cursor: pointer;
-		&:hover {
-			color: #EAC044;
-		}
-      }
-    `
-
-    const Text = styled.p`
-      color: #F7F6F6;
-      font-size: 10pt;
-      margin: 0;
-    `
-
-    const Top = styled.div`
-      text-align: center;
-      color: #F7F6F6;
-      background: #231f20;
-      font-size: 30pt;
-      position: fixed;
-      padding: 20px 23px 0px;
-      border-radius: 5px;
-      left: 10px;
-      bottom: 10px;
-      cursor: pointer;
-      &:hover {
-        background: white;
-        color: #231f20;
-      }
-    `
-
-    const Highlight = styled.span`
-      color: #EAC044;
-      font-size: 12pt;
-    `
+    
 
     return (
-      <Footer>
+      <FooterContainer>
         <Container>
           <Top onClick={this.scrollTop}>
             <FontAwesomeIcon icon={faSortUp} />
@@ -107,25 +48,22 @@ class Footer extends Component {
           <Flex>
             <SocialList>
               <li>
-                <SocialIcon icon='facebook' url="https://www.facebook.com/thirdstreetoptical/?ref=br_rs"/>
+                <SocialIcon icon='facebook' url="https://www.facebook.com/pages/Bemidji-Trap-Skeet-Club/113459918687416"/>
               </li>
               <li>
-                <SocialIcon icon='linkedin' url="https://www.linkedin.com/in/james-hess-2759773/"/>
-              </li>
-              <li>
-                <SocialIcon icon='googleplus' url="https://www.google.com/search?q=third+street+optical&oq=third+street+optical&aqs=chrome..69i57j69i61j69i60l2j0l2.2477j0j4&sourceid=chrome&ie=UTF-8"/>
+                <SocialIcon icon='googleplus' url="https://www.google.com/search?q=bemidji+trap+skeet&rlz=1C1CHBF_enUS767US767&oq=bemidji+trap+skeet&aqs=chrome.0.69i59j69i60j69i57j69i60l2.1903j0j7&sourceid=chrome&ie=UTF-8"/>
               </li>
             </SocialList>
             <Links>
-              <li onClick={() => this.scrollTo(1)}>Information</li>
-              <li onClick={() => this.scrollTo(2)}>Schedule Appointment</li>
+              <Link target="_blank" to={Brochure}>Brochure</Link>
+              <Link target="_blank" to={Newsletter}>Newsletter</Link>
             </Links>
             <Text>
-              © 2019 all rights reserved <Highlight>Third Street Optical</Highlight>
+              © 2019 all rights reserved <Link to={Routes.INDEX}>Bemidji Trap & Skeet Club</Link>
             </Text>
           </Flex>
         </Container>
-      </Footer>
+      </FooterContainer>
     )
   }
 }

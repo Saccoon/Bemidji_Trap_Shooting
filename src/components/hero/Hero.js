@@ -72,23 +72,26 @@ class Hero extends Component {
     `
 	
 	const Height = styled.div`
-	  height: 100vh;
+		height: calc(100vh - 65px);
 	  align-items: center;
 	  display: grid;
 	  justify-content: center;
 	`
 
+	const Title = styled.h1`
+		font-size: 40pt;
+		font-weight: 100;
+	`
+
     return (
       <Hero>
         <Shade rgb={color}>
-			<Shade rgb={color}>
-				<Height>
-					<Container>
-						{title && title}
-						{children}
-					</Container>
-				</Height>
-			</Shade>
+					<Height>
+						<Container>
+							{title && <Title>{title}</Title>}
+							{children}
+						</Container>
+					</Height>
         </Shade>
       </Hero>
     )
